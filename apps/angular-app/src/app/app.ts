@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { TailwindComponentTest } from '@nx-ng-tw-v4/tailwind-component-test';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports:  [RouterModule, TailwindComponentTest],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
