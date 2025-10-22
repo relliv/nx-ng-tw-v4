@@ -234,6 +234,7 @@ Learn more:
 - [Nx Documentation](https://nx.dev)
 - [Angular Documentation](https://angular.dev)
 - [Tailwind CSS v4 Documentation](https://tailwindcss.com/docs)
+- [Semantic Class Names](https://css-tricks.com/semantic-class-names/)
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins)
 
