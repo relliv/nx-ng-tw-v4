@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .testa {
     @apply bg-yellow-500 p-10 m-10 rounded-lg border-2 border-yellow-800
         text-orange-500 text-4xl underline;
