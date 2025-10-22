@@ -122,12 +122,76 @@ For component-specific CSS files, use the `@reference` directive:
 }
 ```
 
+### Custom Theme Colors
+
+This project demonstrates how to create a centralized custom color palette using Tailwind v4's `@theme` directive.
+
+#### Theme Definition
+
+Custom colors are defined in `apps/angular-app/src/theme.css`:
+
+```css
+@theme {
+  --color-brand-50: #f0f9ff;
+  --color-brand-100: #e0f2fe;
+  --color-brand-200: #bae6fd;
+  --color-brand-300: #7dd3fc;
+  --color-brand-400: #38bdf8;
+  --color-brand-500: #0ea5e9;
+  --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  --color-brand-800: #075985;
+  --color-brand-900: #0c4a6e;
+  --color-brand-950: #082f49;
+}
+```
+
+#### Using Custom Colors in Global Styles
+
+In `apps/angular-app/src/styles.css`:
+
+```css
+@import 'tailwindcss';
+@reference './theme.css';
+```
+
+#### Using Custom Colors in Components
+
+In component CSS files, reference both Tailwind and the theme:
+
+```css
+@reference "tailwindcss";
+@reference "../../../../../../apps/angular-app/src/theme.css";
+
+.testa {
+  @apply bg-brand-500 border-brand-900 text-brand-800;
+}
+```
+
+> **Note:** The `@reference` directive is used to include Tailwind utilities without generating duplicate CSS. Learn more in the [Tailwind CSS documentation](https://tailwindcss.com/docs/functions-and-directives#reference-directive).
+
+#### Available Brand Colors
+
+Once the theme is referenced, you can use the brand colors with any Tailwind utility:
+
+- `bg-brand-{50-950}` - Background colors
+- `text-brand-{50-950}` - Text colors
+- `border-brand-{50-950}` - Border colors
+- `ring-brand-{50-950}` - Ring colors
+- And more...
+
+#### Customizing the Palette
+
+To customize the color palette, simply edit the hex values in `apps/angular-app/src/theme.css`. All components that reference the theme will automatically use the updated colors.
+
 ### Key Differences in Tailwind v4
 
 - Use `@reference "tailwindcss"` in component CSS files
+- Use `@reference` for theme files to avoid CSS duplication
 - Gradient classes: `bg-linear-to-r` instead of `bg-gradient-to-r`
 - Native CSS nesting support
 - Improved performance with PostCSS
+- Custom colors defined with `@theme` directive using CSS custom properties
 
 ## Nx Commands
 
