@@ -122,6 +122,8 @@ For component-specific CSS files, use the `@reference` directive:
 }
 ```
 
+> **Note:** The `@apply` directive allows you to use Tailwind utility classes within your CSS. Learn more in the [Tailwind CSS documentation](https://tailwindcss.com/docs/functions-and-directives#apply-directive).
+
 ### Custom Theme Colors
 
 This project demonstrates how to create a centralized custom color palette using Tailwind v4's `@theme` directive.
