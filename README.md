@@ -2,7 +2,7 @@
 
 A demonstration project showcasing the integration of **Nx monorepo**, **Angular 20**, and **Tailwind CSS v4** with modern build tooling and component architecture.
 
-## About This Project
+## 📖 About This Project
 
 This project demonstrates how to effectively combine:
 
@@ -21,7 +21,7 @@ This project demonstrates how to effectively combine:
 - PostCSS configuration with Tailwind v4
 - Vite-powered development server
 
-## Prerequisites
+## ✅ Prerequisites
 
 - Node.js (v20 or higher recommended)
 - pnpm (v8 or higher)
@@ -32,7 +32,7 @@ If you don't have pnpm installed:
 npm install -g pnpm
 ```
 
-## Installation
+## 🚀 Installation
 
 1. Clone the repository:
 
@@ -47,7 +47,7 @@ cd nx-ng-tw-v4
 pnpm install
 ```
 
-## Running the Project
+## ▶️ Running the Project
 
 ### Development Server
 
@@ -77,7 +77,7 @@ npx nx build angular-app
 npx nx test angular-app
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 nx-ng-tw-v4/
@@ -94,7 +94,7 @@ nx-ng-tw-v4/
 └── .postcssrc.json              # PostCSS configuration
 ```
 
-## Tailwind CSS v4 Integration
+## 🎨 Tailwind CSS v4 Integration
 
 This project demonstrates Tailwind CSS v4 features:
 
@@ -193,7 +193,7 @@ To customize the color palette, simply edit the hex values in `apps/angular-app/
 - Improved performance with PostCSS
 - Custom colors defined with `@theme` directive using CSS custom properties
 
-## Nx Commands
+## 🛠️ Nx Commands
 
 ### Visualize Project Graph
 
@@ -219,13 +219,13 @@ npx nx g @nx/angular:library packages/my-lib
 npx nx sync
 ```
 
-## Install Nx Console
+## 💻 Install Nx Console
 
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
 [Install Nx Console »](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Useful Links
+## 🔗 Useful Links
 
 Learn more:
 
