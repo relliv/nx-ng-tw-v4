@@ -17,6 +17,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@nx-ng-tw-v4/source"]
+    "customConditions": ["@nx-ng-tw-v4/source"],
+    "paths": {
+      "@nx-ng-tw-v4/tailwind-component-test": [
+        "packages/features/tailwind-component-test/src/index.ts"
+      ]
+    }
   }
 }
