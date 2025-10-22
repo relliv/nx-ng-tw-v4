@@ -5,6 +5,7 @@
   "prefix": "app",
   "sourceRoot": "apps/angular-app/src",
   "tags": [],
+  "implicitDependencies": ["tailwind-component-test"],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
