@@ -2,7 +2,9 @@
   "name": "@nx-ng-tw-v4/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve angular-app"
+  },
   "private": true,
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~1.19.1",
