@@ -15,9 +15,11 @@ This project demonstrates how to effectively combine:
 
 - Nx monorepo workspace structure with Angular applications and libraries
 - Tailwind CSS v4 integration with Angular components
+- Custom theme colors with centralized color palette management
+- Dark mode support with automatic and manual toggle
 - Using `@apply` directive with nested CSS and semantic naming
 - Component-scoped styles with `@reference` directive
-- Modern Angular standalone components
+- Modern Angular standalone components with signals
 - PostCSS configuration with Tailwind v4
 - Vite-powered development server
 
@@ -41,7 +43,7 @@ git clone <repository-url>
 cd nx-ng-tw-v4
 ```
 
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
 pnpm install
@@ -84,7 +86,12 @@ nx-ng-tw-v4/
 ├── apps/
 │   └── angular-app/              # Main Angular application
 │       └── src/
-│           └── styles.css        # Global Tailwind CSS imports
+│           ├── styles.css        # Global Tailwind CSS imports
+│           ├── theme.css         # Custom theme colors & dark mode
+│           └── app/
+│               ├── app.ts        # App component with dark mode toggle
+│               ├── app.html      # App template
+│               └── app.css       # App styles
 ├── packages/
 │   └── features/
 │       └── tailwind-component-test/  # Feature library
@@ -130,23 +137,29 @@ This project demonstrates how to create a centralized custom color palette using
 
 #### Theme Definition
 
-Custom colors are defined in `apps/angular-app/src/theme.css`:
+Custom colors are defined in `apps/angular-app/src/theme.css` using a two-layer approach with CSS variables:
 
 ```css
+/* CSS variables for light mode */
+:root {
+  --brand-50: #f0f9ff;
+  --brand-100: #e0f2fe;
+  /* ... more shades ... */
+  --brand-900: #0c4a6e;
+  --brand-950: #082f49;
+}
+
+/* Map CSS variables to Tailwind theme */
 @theme {
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-200: #bae6fd;
-  --color-brand-300: #7dd3fc;
-  --color-brand-400: #38bdf8;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-800: #075985;
-  --color-brand-900: #0c4a6e;
-  --color-brand-950: #082f49;
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  /* ... more shades ... */
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
 }
 ```
+
+This approach allows dynamic color changes for dark mode support.
 
 #### Using Custom Colors in Global Styles
 
@@ -185,6 +198,51 @@ Once the theme is referenced, you can use the brand colors with any Tailwind uti
 #### Customizing the Palette
 
 To customize the color palette, simply edit the hex values in `apps/angular-app/src/theme.css`. All components that reference the theme will automatically use the updated colors.
+
+### Dark Mode Support
+
+This project includes a fully functional dark mode implementation with both automatic and manual controls.
+
+#### Features
+
+- **Toggle Button** - Fixed position button in the top-right corner to manually switch themes
+- **System Preference Support** - Automatically adapts to OS dark mode preference via `prefers-color-scheme`
+- **Smooth Transitions** - Background and text colors transition smoothly (0.3s ease)
+- **Adaptive Colors** - Brand color palette inverts for better contrast in dark mode
+
+#### Implementation
+
+The dark mode system uses CSS custom properties that change based on the `.dark` class:
+
+```css
+/* Light mode (default) */
+:root {
+  --brand-500: #0ea5e9;
+}
+
+/* Dark mode */
+.dark {
+  --brand-500: #0ea5e9; /* Adjusted for dark backgrounds */
+}
+
+/* Tailwind theme references these variables */
+@theme {
+  --color-brand-500: var(--brand-500);
+}
+```
+
+#### Manual Toggle
+
+Click the moon/sun button in the top-right corner, or programmatically toggle:
+
+```typescript
+// In your component
+toggleDarkMode() {
+  document.documentElement.classList.toggle('dark');
+}
+```
+
+The app component (`apps/angular-app/src/app/app.ts`) includes a complete dark mode toggle implementation using Angular signals.
 
 ### Key Differences in Tailwind v4
 
