@@ -1,0 +1,15 @@
+@reference "tailwindcss";
+@reference "../theme.css";
+
+.dark-mode-toggle {
+  @apply bg-brand-500 hover:bg-brand-600 text-white rounded-full p-3 shadow-lg transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2;
+}
+
+.dark-mode-toggle:hover {
+  @apply scale-110;
+}
+
+.dark-mode-toggle:active {
+  @apply scale-95;
+}

@@ -1,13 +1,61 @@
+/* Define CSS variables that change based on light/dark mode */
+:root {
+  --brand-50: #f0f9ff;
+  --brand-100: #e0f2fe;
+  --brand-200: #bae6fd;
+  --brand-300: #7dd3fc;
+  --brand-400: #38bdf8;
+  --brand-500: #0ea5e9;
+  --brand-600: #0284c7;
+  --brand-700: #0369a1;
+  --brand-800: #075985;
+  --brand-900: #0c4a6e;
+  --brand-950: #082f49;
+}
+
+/* Dark mode colors - inverted for better contrast */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-50: #082f49;
+    --brand-100: #0c4a6e;
+    --brand-200: #075985;
+    --brand-300: #0369a1;
+    --brand-400: #0284c7;
+    --brand-500: #0ea5e9;
+    --brand-600: #38bdf8;
+    --brand-700: #7dd3fc;
+    --brand-800: #bae6fd;
+    --brand-900: #e0f2fe;
+    --brand-950: #f0f9ff;
+  }
+}
+
+/* Manual dark mode toggle with .dark class */
+.dark {
+  --brand-50: #082f49;
+  --brand-100: #0c4a6e;
+  --brand-200: #075985;
+  --brand-300: #0369a1;
+  --brand-400: #0284c7;
+  --brand-500: #0ea5e9;
+  --brand-600: #38bdf8;
+  --brand-700: #7dd3fc;
+  --brand-800: #bae6fd;
+  --brand-900: #e0f2fe;
+  --brand-950: #f0f9ff;
+}
+
+/* Map CSS variables to Tailwind theme */
 @theme {
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-200: #bae6fd;
-  --color-brand-300: #7dd3fc;
-  --color-brand-400: #38bdf8;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-800: #075985;
-  --color-brand-900: #0c4a6e;
-  --color-brand-950: #082f49;
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
 }
