@@ -2,6 +2,8 @@
 
 A demonstration project showcasing the integration of **Nx monorepo**, **Angular 20**, and **Tailwind CSS v4** with modern build tooling and component architecture.
 
+## [⚡ Demo](https://stackblitz.com/~/github.com/relliv/nx-ng-tw-v4)
+
 ## 📖 About This Project
 
 This project demonstrates how to effectively combine:
